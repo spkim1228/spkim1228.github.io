@@ -5,7 +5,7 @@ subtitle: Text and only text!
 tags: [layout, text, test]
 ---
 
-A fairly simple sample post with no images. Just text!
+A fairly simple sample post with no images. Just text! But it has a subtitle, "Text and only text!" Where is the subtitle defined?
 
 Here's some filler text:
 
