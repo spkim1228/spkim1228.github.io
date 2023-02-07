@@ -1,16 +1,15 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: All the facts you never wanted to know.
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Paul Kim and I'll be one of your TA's for CSCI 103 this semester! Some facts about me are that:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
+- I am a computer science and psychology major!
+- I am currently a junior at Williams!
+- I have lost a toenail before from overly tight shoes while running!
 
 ### my history
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+It all started in the late part of '01. I don't even remember how I was born or what happened to me the first several years after '01. All I have are stories from some older folks about what I was like. Was it me if it's something I can't even remember. How do I compartmentalize different aspects of myself. Is myself my identity or what other people have pushed onto me.
