@@ -21,10 +21,12 @@ description: Paul's Website For Various Things
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Courses:
-    - CSCI103: "https://bit.ly/CSCI103"
-    - CSCI376: "http://bit.ly/csci376"
-  Markdown Cheatsheet: "http://www.markdowntutorial.com/"
+  Good Songs:
+    - Banger No. 1: "https://www.youtube.com/watch?v=TTQdU_6xgXM"
+    - Short Banger: "https://www.youtube.com/watch?v=V3jLRPCYOUE"
+    - Classic Banger: "https://www.youtube.com/watch?v=K6q_aEMep4U"
+  Something Fun!: "https://play.pokemonshowdown.com/"
+  Something Not Fun!: "https://rateyourmusic.com/"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
