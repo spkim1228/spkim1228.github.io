@@ -2,10 +2,24 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<Base
+  title="Paul Kim's Personal Site"
+  description=""
+>
+
+  <header class="intro">
+    <Image src={headshot} alt="Me (:" width={140} height={140} />
+    <div>
+      <h1>Paul Kim</h1>
+      <p>
+      </p>
+      <p class="contact">
+        <a href="mailto:spkim@pm.me">Email</a> ·
+        <a href="/cv.pdf">CV</a> ·
+        <a href="https://scholar.google.com/...">Scholar</a> ·
+        <a href="https://github.com/spkim1228">GitHub</a>
+      </p>
+    </div>
+  </header>
