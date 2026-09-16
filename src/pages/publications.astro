@@ -1,0 +1,6 @@
+---
+import { getCollection } from 'astro:content';
+const pubs = (await getCollection('publications'))
+  .sort((a, b) => b.data.year - a.data.year);
+---
+{pubs.map(p => <PubEntry {...p.data} />)}

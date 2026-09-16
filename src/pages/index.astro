@@ -1,7 +1,12 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Base from '../layouts/Base.astro';
+import PubEntry from '../components/PubEntry.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+// import headshot from '../assets/headshot.jpg';
 
+const pubs = (await getCollection('publications'))
+  .sort((a, b) => b.data.year - a.data.year);
 ---
 
 <Base
@@ -10,7 +15,7 @@ import Layout from '../layouts/Layout.astro';
 >
 
   <header class="intro">
-    <Image src={headshot} alt="Me (:" width={140} height={140} />
+    <Image src={headshot} alt="It's Me (:" width={140} height={140} />
     <div>
       <h1>Paul Kim</h1>
       <p>
@@ -23,3 +28,36 @@ import Layout from '../layouts/Layout.astro';
       </p>
     </div>
   </header>
+
+  <section>
+    <h2>News</h2>
+    <ul class="news">
+      {news.map(n => (
+        <li><time>{n.date}</time> {n.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Selected work</h2>
+    <ul class="pubs">
+      {selected.map(p => <PubEntry {...p.data} />)}
+    </ul>
+    <a href="/publications/">All publications →</a>
+  </section>
+</Base>
+
+<style>
+  .intro { display: flex; gap: 1.5rem; align-items: flex-start; }
+  .intro img { border-radius: 4px; }
+  h1 { font-size: 1.5rem; margin: 0 0 .5rem; }
+  .contact { color: #595959; font-size: .9375rem; }
+  .news { list-style: none; padding: 0; }
+  .news time { color: #595959; font-variant-numeric: tabular-nums; margin-right: .75rem; }
+  ul.pubs { list-style: none; padding: 0; }
+  section { margin-top: 2.5rem; }
+
+  @media (max-width: 34rem) {
+    .intro { flex-direction: column; }
+  }
+</style>

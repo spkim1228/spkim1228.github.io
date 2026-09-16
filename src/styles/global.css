@@ -1,0 +1,13 @@
+:root {
+  --measure: 68ch;
+  --ink: #1a1a1a;
+  --muted: #595959;
+  --accent: #0b5cad;
+}
+body {
+  font: 1.0625rem/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding: 3rem 1.25rem;
+}
