@@ -2,11 +2,11 @@
 import Base from '../layouts/Base.astro';
 import PubEntry from '../components/PubEntry.astro';
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-// import headshot from '../assets/headshot.jpg';
 
 const pubs = (await getCollection('publications'))
   .sort((a, b) => b.data.year - a.data.year);
+const selected = pubs.filter(p => p.data.selected);
+const news: { date: string; text: string }[] = [];
 ---
 
 <Base
@@ -15,7 +15,6 @@ const pubs = (await getCollection('publications'))
 >
 
   <header class="intro">
-    <Image src={headshot} alt="It's Me (:" width={140} height={140} />
     <div>
       <h1>Paul Kim</h1>
       <p>

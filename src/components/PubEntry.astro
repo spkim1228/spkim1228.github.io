@@ -1,1 +1,42 @@
-temp
+---
+interface Props {
+  title: string;
+  authors: string[];
+  venue: string;
+  year: number;
+  type: 'conference' | 'workshop' | 'preprint' | 'journal' | 'thesis';
+  selected?: boolean;
+  links: {
+    pdf?: string;
+    arxiv?: string;
+    code?: string;
+    page?: string;
+    bib?: string;
+  };
+}
+
+const { title, authors, venue, year, links } = Astro.props as Props;
+---
+
+<li class="pub">
+  <span class="title">{title}</span>
+  <span class="authors">{authors.join(', ')}</span>
+  <span class="venue">{venue} · {year}</span>
+  {(links.pdf || links.arxiv || links.code || links.page || links.bib) && (
+    <span class="links">
+      {links.pdf && <a href={links.pdf}>PDF</a>}
+      {links.arxiv && <a href={links.arxiv}>arXiv</a>}
+      {links.code && <a href={links.code}>Code</a>}
+      {links.page && <a href={links.page}>Page</a>}
+      {links.bib && <a href={links.bib}>BibTeX</a>}
+    </span>
+  )}
+</li>
+
+<style>
+  .pub { margin-bottom: 1rem; }
+  .title { display: block; font-weight: 600; }
+  .authors, .venue { display: block; color: #595959; font-size: .9375rem; }
+  .links { display: block; font-size: .875rem; }
+  .links a { margin-right: .75rem; }
+</style>
