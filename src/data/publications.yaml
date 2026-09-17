@@ -1,4 +1,4 @@
-- id: kim2026-tinyml
+- id: kim2024-tinyml
   title: "Designing Explainable AI for TinyML Systems"
   authors:
     - Paul Kim
@@ -6,4 +6,4 @@
   year: 2024
   type: thesis
   links:
-    pdf: public/kim2024.pdf
+    pdf: /kim2024.pdf
