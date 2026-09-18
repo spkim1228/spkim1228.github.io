@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
+import Navigation from '../components/Nav.astro';
 import PubEntry from '../components/PubEntry.astro';
+
+import "../styles/global.css";
 import { getCollection } from 'astro:content';
 
 const pubs = (await getCollection('publications'))
@@ -20,11 +23,15 @@ const news: { date: string; text: string }[] = [];
       <p>
       </p>
       <p class="contact">
-        <a href="mailto:spkim@pm.me">Email</a> ·
+        Email: spkim AT pm DOT me ·
         <a href="/cv.pdf">CV</a> ·
         <a href="https://scholar.google.com/...">Scholar</a> ·
         <a href="https://github.com/spkim1228">GitHub</a>
       </p>
+    </div>
+
+    <div>
+      <Navigation />
     </div>
   </header>
 
