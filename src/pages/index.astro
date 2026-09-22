@@ -6,6 +6,13 @@ import PubEntry from '../components/PubEntry.astro';
 import "../styles/global.css";
 import { getCollection } from 'astro:content';
 
+// Load about me content
+const aboutEntry = await getEntry("about");
+const { Content: AboutContent } = aboutEntry
+        ? await render(aboutEntry)
+        : { Content: null };
+
+// Load publications content
 const pubs = (await getCollection('publications'))
   .sort((a, b) => b.data.year - a.data.year);
 const selected = pubs.filter(p => p.data.selected);
@@ -17,6 +24,7 @@ const news: { date: string; text: string }[] = [];
   description=""
 >
 
+  <!-- Header -->
   <header class="intro">
     <div>
       <h1>Paul Kim</h1>
@@ -25,7 +33,7 @@ const news: { date: string; text: string }[] = [];
       <p class="contact">
         Email: spkim AT pm DOT me ·
         <a href="/cv.pdf">CV</a> ·
-        <a href="https://scholar.google.com/...">Scholar</a> ·
+        <!-- <a href="https://scholar.google.com/...">Scholar</a> -->
         <a href="https://github.com/spkim1228">GitHub</a>
       </p>
     </div>
@@ -35,10 +43,13 @@ const news: { date: string; text: string }[] = [];
     </div>
   </header>
 
+  <!-- About Me -->
   <section>
-
+    {AboutContent ? <AboutContent /> : <p>Loading about me...</p>}
   </section>
 
+<!--
+  <!-- News -->
   <section>
     <h2>News</h2>
     <ul class="news">
@@ -47,7 +58,9 @@ const news: { date: string; text: string }[] = [];
       ))}
     </ul>
   </section>
+-->
 
+  <!-- Publications -->
   <section>
     <h2>Selected work</h2>
     <ul class="pubs">
