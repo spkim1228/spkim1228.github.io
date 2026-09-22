@@ -22,7 +22,7 @@ const publications = defineCollection({
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  loader: glob({ pattern: '**/*.md', base: './src/contents/projects' }),
   schema: z.object({
     title: z.string(),
     blurb: z.string(),
@@ -31,4 +31,14 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { publications, projects };
+const blogs = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/contents/blogs' }),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    date: z.coerce.date(),
+    content: z.string(),
+  }),
+})
+
+export const collections = { publications, projects, blogs };
