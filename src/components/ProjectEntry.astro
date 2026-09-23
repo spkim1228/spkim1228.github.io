@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  author: string;
+  year: number;
+  links: {
+    code?: string;
+    blog?: string;
+  };
+}
+
+const { title, year, links } = Astro.props as Props;
+---
+
+<li class="proj">
+  <span class="title">{title}</span>
+  <span class="authors">{authors.join(', ')}</span>
+  <span class="year">{year}</span>
+  {(links.code || links.blog) && (
+    <span class="links">
+      {links.code && <a href={links.code}>Code</a>}
+      {links.blog && <a href={links.bib}>Blog</a>}
+    </span>
+  )}
+</li>
+
+<style>
+  .pub { margin-bottom: 1rem; }
+  .title { display: block; font-weight: 600; }
+  .authors, .year { display: block; color: var(--color-text-muted); font-size: .9375rem; }
+  .links { display: block; font-size: .875rem; }
+  .links a { margin-right: .75rem; }
+</style>

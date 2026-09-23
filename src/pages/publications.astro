@@ -1,13 +1,33 @@
 ---
 import Base from '../layouts/Base.astro';
+import Navigation from '../components/Nav.astro';
 
+import "../styles/global.css";
 import { getCollection } from 'astro:content';
 import PubEntry from '../components/PubEntry.astro';
 const pubs = (await getCollection('publications'))
   .sort((a, b) => b.data.year - a.data.year);
 ---
 
-<Base title="Publications — SPK">
-  <h1>Publications</h1>
+<Base
+  title="Publications - SPK"
+>
+
+  <!-- Header -->
+  <header class="intro">
+    <div>
+      <h1>Publications</h1>
+      <p>
+      </p>
+    </div>
+
+    <div>
+      <Navigation />
+    </div>
+  </header>
+
+  <section>
+    {pubs.map(p => <PubEntry {...p.data} />)}
+  </section>
+
 </Base>
-{pubs.map(p => <PubEntry {...p.data} />)}

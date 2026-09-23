@@ -14,4 +14,5 @@ export default defineConfig({
     styles: ['normal'],
     fallbacks: ['system-ui', 'sans-serif'],
   }],
+  trailingSlash: 'always',
 });
