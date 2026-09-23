@@ -7,24 +7,24 @@ import '../styles/global.css';
 <html lang="en">
 
 	<head>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width" />
-                <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-                <link rel="icon" href="/icon.ico" />
-                <meta name="generator" content={Astro.generator} />
-                <Font cssVariable="--font-atkinson" preload />
-                <title>Paul Kim</title>
-        </head>
-        <body>
-                <slot />
-        </body>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="icon" href="/icon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<Font cssVariable="--font-atkinson" preload />
+		<title>Paul Kim</title>
+		<!-- Set theme before first paint to avoid a light-mode flash -->
+		<script is:inline>
+			let theme;
+			try { theme = localStorage.getItem('theme'); } catch {}
+			theme ??= matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			document.documentElement.dataset.theme = theme;
+		</script>
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
 </html>
-
-<style>
-        html,
-        body {
-                margin: 0;
-                width: 100%;
-                height: 100%;
-        }
-</style>

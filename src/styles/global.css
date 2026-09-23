@@ -1,73 +1,164 @@
 /*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
+	Josh's Custom CSS Reset
+	https://www.joshwcomeau.com/css/custom-css-reset/
 */
 
 *, *::before, *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *:not(dialog) {
-  margin: 0;
+	margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
+	html {
+		interpolate-size: allow-keywords;
+		scroll-behavior: smooth;
+	}
 }
 
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
 }
 
 img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 input, button, textarea, select {
-  font: inherit;
+	font: inherit;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 p {
-  text-wrap: pretty;
+	text-wrap: pretty;
 }
 h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
+	text-wrap: balance;
 }
 
 #root, #__next {
-  isolation: isolate;
+	isolation: isolate;
 }
 
 /*
-  Global CSS
+	Global CSS
 */
 
 :root {
-  --ink: #1a1a1a;
-  --muted: #595959;
-  --accent: #0b5cad;
-  --rule: #e5e5e5;
+
+	/* --- LIGHT THEME (Default) --- */
+	color-scheme: light;
+	--color-bg: #ffffff;
+	--color-bg-offset: #ffffff;
+	--color-bg-header: rgba(255, 255, 255, 0.85);
+	--color-text-main: #1a1a1a;
+	--color-text-muted: #555555;
+	--color-accent: #21421e;
+	--color-accent-light: #d8e4bc;
+	--color-border: #eaeaea;
+	--color-header-border: rgba(0, 0, 0, 0.08);
+	--color-bg-mobile-menu: rgba(255, 255, 255, 0.95);
+
+	/* Spacing & UI */
+	--max-width: 60rem;
+	--radius: 8px;
+	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+/* --- DARK THEME --- */
+[data-theme="dark"] {
+	color-scheme: dark;
+	--color-bg: #21421e;
+	--color-bg-offset: #21421e;
+	--color-bg-header: rgba(15, 42, 15, 0.8);
+	--color-text-main: #e2f0e2;
+	--color-text-muted: #94b899;
+	--color-accent: #7bb661;
+	--color-accent-light: #228a1e;
+	--color-border: #395533;
+	--color-header-border: rgba(255, 255, 255, 0.1);
+	--color-bg-mobile-menu: rgba(20, 42, 15, 0.95);
+}
+
+
+/* Minimal Scrollbar for Browser and Modals */
+html {
+	scrollbar-color: var(--color-border) var(--color-bg);
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-border);
+	border-radius: 10px;
+	border: 2px solid var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-text-muted);
 }
 
 body {
-  font-family: var(--font-atkinson), system-ui, sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.6;
-  color: var(--ink);
-  max-width: 68ch;
-  margin-inline: auto;
-  padding: 3rem 1.25rem;
+	font-family: var(--font-atkinson), system-ui, sans-serif;
+	font-size: 1.0625rem;
+	line-height: 1.6;
+	background-color: var(--color-bg);
+	color: var(--color-text-main);
 }
 
-h1, h2, h3 { font-weight: 600; line-height: 1.25; margin: 2rem 0 .5rem; }
-h1 { font-size: 1.5rem; }
-h2 { font-size: 1.125rem; }
-p  { margin: 0 0 1rem; }
+main {
+	width: 100%;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 3rem 1rem;
+}
+
+h1, h2, h3 {
+	font-weight: 600;
+	line-height: 1.25;
+	margin: 2rem 0 .5rem;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+p {
+	margin: 0 0 1rem;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+	transition: opacity 0.2s;
+}
+
+a:hover {
+	opacity: 0.8;
+	text-decoration: underline;
+}

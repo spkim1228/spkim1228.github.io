@@ -1,0 +1,27 @@
+---
+---
+<button id="theme-toggle" type="button" aria-label="Toggle dark theme">◐</button>
+
+<script>
+	document.getElementById('theme-toggle')?.addEventListener('click', () => {
+		const root = document.documentElement;
+		const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+		root.dataset.theme = next;
+		try { localStorage.setItem('theme', next); } catch {}
+	});
+</script>
+
+<style>
+	button {
+		background: none;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius);
+		color: var(--color-text-main);
+		cursor: pointer;
+		padding: 0.125rem 0.5rem;
+	}
+
+	button:hover {
+		border-color: var(--color-text-muted);
+	}
+</style>
