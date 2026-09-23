@@ -45,3 +45,29 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+/*
+  Global CSS
+*/
+
+:root {
+  --ink: #1a1a1a;
+  --muted: #595959;
+  --accent: #0b5cad;
+  --rule: #e5e5e5;
+}
+
+body {
+  font-family: var(--font-atkinson), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 68ch;
+  margin-inline: auto;
+  padding: 3rem 1.25rem;
+}
+
+h1, h2, h3 { font-weight: 600; line-height: 1.25; margin: 2rem 0 .5rem; }
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.125rem; }
+p  { margin: 0 0 1rem; }

@@ -1,3 +1,8 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+---
+
 <!doctype html>
 <html lang="en">
 
@@ -7,6 +12,7 @@
                 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
                 <link rel="icon" href="/icon.ico" />
                 <meta name="generator" content={Astro.generator} />
+                <Font cssVariable="--font-atkinson" preload />
                 <title>Paul Kim</title>
         </head>
         <body>

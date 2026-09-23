@@ -5,12 +5,7 @@ import PubEntry from '../components/PubEntry.astro';
 
 import "../styles/global.css";
 import { getCollection } from 'astro:content';
-
-// Load about me content
-const aboutEntry = await getEntry("about");
-const { Content: AboutContent } = aboutEntry
-        ? await render(aboutEntry)
-        : { Content: null };
+import { Content as AboutContent } from '../contents/about.md';
 
 // Load publications content
 const pubs = (await getCollection('publications'))
@@ -45,7 +40,7 @@ const news: { date: string; text: string }[] = [];
 
   <!-- About Me -->
   <section>
-    {AboutContent ? <AboutContent /> : <p>Loading about me...</p>}
+    <AboutContent />
   </section>
 
 <!--
