@@ -14,12 +14,16 @@
 <style>
 	button {
 		background: none;
+		border: none;
 		color: var(--color-text-main);
 		cursor: pointer;
 		padding: 0.125rem 0.5rem;
+		outline: none;
 	}
 
-	button:hover {
-		color: var(--color-text-muted);
+	button:hover,
+	button:focus-visible {
+		background: var(--color-text-main);
+		color: var(--color-bg);
 	}
 </style>
