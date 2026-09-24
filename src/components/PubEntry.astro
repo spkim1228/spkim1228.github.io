@@ -3,9 +3,8 @@ interface Props {
   title: string;
   authors: string[];
   venue: string;
-  year: number;
-  type: 'conference' | 'workshop' | 'preprint' | 'journal' | 'thesis' | 'other' ;
-  selected?: boolean;
+  date: Date;
+  type: 'conference' | 'workshop' | 'preprint' | 'journal' | 'thesis' | 'other';
   links: {
     pdf?: string;
     arxiv?: string;
@@ -15,13 +14,15 @@ interface Props {
   };
 }
 
-const { title, authors, venue, year, links } = Astro.props as Props;
+const { title, authors, venue, date, links } = Astro.props as Props;
+
+const display = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' });
 ---
 
 <li class="pub">
   <span class="title">{title}</span>
   <span class="authors">{authors.join(', ')}</span>
-  <span class="venue">{venue} · {year}</span>
+  <span class="venue">{venue} · <time datetime={date.toISOString().slice(0, 7)}>{display}</time></span>
   {(links.pdf || links.arxiv || links.code || links.page || links.bib) && (
     <span class="links">
       {links.pdf && <a href={links.pdf}>PDF</a>}

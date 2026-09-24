@@ -1,0 +1,28 @@
+---
+import Navigation from './Nav.astro';
+
+interface Props {
+  heading: string;
+}
+
+const { heading } = Astro.props;
+---
+
+<header class="intro">
+  <div>
+    <h1>{heading}</h1>
+    <slot />
+  </div>
+
+  <div>
+    <Navigation />
+  </div>
+</header>
+
+<style>
+  .intro { display: flex; gap: 1.5rem; align-items: flex-start; }
+
+  @media (max-width: 34rem) {
+    .intro { flex-direction: column; }
+  }
+</style>

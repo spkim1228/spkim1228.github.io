@@ -1,24 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
-import BlogEntry from '../components/BlogEntry.astro';
+import ProjectEntry from '../components/ProjectEntry.astro';
 
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blogs'))
+const projects = (await getCollection('projects'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Base
-  title="Blog - SPK"
+  title="Projects - SPK"
 >
 
   <!-- Header -->
-  <Header slot="header" heading="Blog" />
+  <Header slot="header" heading="Projects" />
 
   <section>
     <ul class="entries">
-      {posts.map(post => <BlogEntry entry={post} />)}
+      {projects.map(project => <ProjectEntry entry={project} />)}
     </ul>
   </section>
 

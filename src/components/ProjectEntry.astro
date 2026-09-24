@@ -1,33 +1,32 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+
 interface Props {
-  title: string;
-  author: string;
-  year: number;
-  links: {
-    code?: string;
-    blog?: string;
-  };
+  entry: CollectionEntry<'projects'>;
 }
 
-const { title, year, links } = Astro.props as Props;
+const { entry } = Astro.props;
+const { title, blurb, date, links } = entry.data;
+
+const display = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 
 <li class="proj">
   <span class="title">{title}</span>
-  <span class="authors">{authors.join(', ')}</span>
-  <span class="year">{year}</span>
+  <span class="blurb">{blurb}</span>
+  <time class="date" datetime={date.toISOString().slice(0, 10)}>{display}</time>
   {(links.code || links.blog) && (
     <span class="links">
       {links.code && <a href={links.code}>Code</a>}
-      {links.blog && <a href={links.bib}>Blog</a>}
+      {links.blog && <a href={links.blog}>Blog</a>}
     </span>
   )}
 </li>
 
 <style>
-  .pub { margin-bottom: 1rem; }
+  .proj { margin-bottom: 1rem; }
   .title { display: block; font-weight: 600; }
-  .authors, .year { display: block; color: var(--color-text-muted); font-size: .9375rem; }
+  .blurb, .date { display: block; color: var(--color-text-muted); font-size: .9375rem; }
   .links { display: block; font-size: .875rem; }
   .links a { margin-right: .75rem; }
 </style>

@@ -1,24 +1,25 @@
-<!doctype html>
-<html lang="en">
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
 
-        <head>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width" />
-                <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-                <link rel="icon" href="/icon.ico" />
-                <meta name="generator" content={Astro.generator} />
-                <title>Blog</title>
-        </head>
-        <body>
-                <slot />
-        </body>
-</html>
+interface Props {
+	title: string;
+	subtitle: string;
+	date: Date;
+}
 
-<style>
-        html,
-        body {
-                margin: 0;
-                width: 100%;
-                height: 100%;
-        }
-</style>
+const { title, subtitle, date } = Astro.props;
+
+const display = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base title={`${title} - SPK`} description={subtitle}>
+	<Header slot="header" heading={title}>
+		<p class="subtitle">{subtitle}</p>
+		<time datetime={date.toISOString().slice(0, 10)}>{display}</time>
+	</Header>
+
+	<article>
+		<slot />
+	</article>
+</Base>

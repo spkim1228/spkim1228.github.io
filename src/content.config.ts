@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { file, glob } from 'astro/loaders';
 
 const publications = defineCollection({
@@ -8,9 +9,8 @@ const publications = defineCollection({
     title: z.string(),
     authors: z.array(z.string()),
     venue: z.string(),
-    year: z.number(),
-    type: z.enum(['conference', 'workshop', 'preprint', 'journal', 'thesis']),
-    selected: z.boolean().default(false),
+    date: z.coerce.date(),
+    type: z.enum(['conference', 'workshop', 'preprint', 'journal', 'thesis', 'other']),
     links: z.object({
       pdf: z.string().optional(),
       arxiv: z.string().optional(),
@@ -22,23 +22,26 @@ const publications = defineCollection({
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/contents/projects' }),
+  loader: glob({ pattern: '**/*.md', base: './src/data/projects' }),
   schema: z.object({
     title: z.string(),
     blurb: z.string(),
     date: z.coerce.date(),
-    stack: z.array(z.string()).optional(),
+    links: z.object({
+      code: z.string().optional(),
+      blog: z.string().optional(),
+    }),
   }),
 });
 
 const blogs = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/contents/blogs' }),
+  loader: glob({ pattern: '**/*.md', base: './src/data/blogs' }),
   schema: z.object({
     title: z.string(),
     subtitle: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
   }),
-})
+});
 
 export const collections = { publications, projects, blogs };

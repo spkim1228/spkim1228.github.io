@@ -1,6 +1,13 @@
 ---
 import { Font } from 'astro:assets';
 import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = 'Paul Kim', description } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,12 +15,13 @@ import '../styles/global.css';
 
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/icon.ico" sizes="32x32" />
 		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
-		<link rel="icon" href="/icon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<Font cssVariable="--font-atkinson" preload />
-		<title>Paul Kim</title>
+		<title>{title}</title>
+		{description && <meta name="description" content={description} />}
 		<!-- Set theme before first paint to avoid a light-mode flash -->
 		<script is:inline>
 			let theme;
@@ -23,6 +31,7 @@ import '../styles/global.css';
 		</script>
 	</head>
 	<body>
+		<slot name="header" />
 		<main>
 			<slot />
 		</main>

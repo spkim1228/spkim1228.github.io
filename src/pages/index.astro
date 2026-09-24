@@ -1,16 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import Navigation from '../components/Nav.astro';
-import PubEntry from '../components/PubEntry.astro';
+import Header from '../components/Header.astro';
 
-import "../styles/global.css";
-import { getCollection } from 'astro:content';
-import { Content as AboutContent } from '../contents/about.md';
+import { Content as AboutContent, frontmatter } from '../data/about.md';
 
-// Load publications content
-const pubs = (await getCollection('publications'))
-  .sort((a, b) => b.data.year - a.data.year);
-const selected = pubs.filter(p => p.data.selected);
+const { name, avatar, shortBio, institution } = frontmatter;
 const news: { date: string; text: string }[] = [];
 ---
 
@@ -20,23 +14,17 @@ const news: { date: string; text: string }[] = [];
 >
 
   <!-- Header -->
-  <header class="intro">
-    <div>
-      <h1>Paul Kim</h1>
-      <p>
-      </p>
-      <p class="contact">
-        Email: spkim AT pm DOT me ·
-        <a href="/cv.pdf">CV</a> ·
-        <!-- <a href="https://scholar.google.com/...">Scholar</a> -->
-        <a href="https://github.com/spkim1228">GitHub</a>
-      </p>
-    </div>
-
-    <div>
-      <Navigation />
-    </div>
-  </header>
+  <Header slot="header" heading={name}>
+    {avatar && <img src={`/${avatar}`} alt={name} width="120" />}
+    {shortBio && <p>{shortBio}</p>}
+    {institution && <p class="institution">{institution}</p>}
+    <ul class="contact">
+      <li>Email: spkim AT pm DOT me</li>
+      <li><a href="/cv.pdf">CV</a></li>
+      {/* <li><a href="https://scholar.google.com/...">Scholar</a></li> */}
+      <li><a href="https://github.com/spkim1228">GitHub</a></li>
+    </ul>
+  </Header>
 
   <!-- About Me -->
   <section>
@@ -53,29 +41,14 @@ const news: { date: string; text: string }[] = [];
       ))}
     </ul>
   </section> -->
-
-
-  <!-- Publications -->
-  <section>
-    <h2>Selected work</h2>
-    <ul class="pubs">
-      {selected.map(p => <PubEntry {...p.data} />)}
-    </ul>
-    <a href="/publications/">All publications →</a>
-  </section>
 </Base>
 
 <style>
-  .intro { display: flex; gap: 1.5rem; align-items: flex-start; }
-  .intro img { border-radius: 4px; }
-  h1 { font-size: 1.5rem; margin: 0 0 .5rem; }
-  .contact { color: var(--color-text-muted); font-size: .9375rem; }
+  img { border-radius: 4px; }
+  .institution, .contact { color: var(--color-text-muted); font-size: .9375rem; }
+  .contact { display: flex; flex-wrap: wrap; list-style: none; padding: 0; }
+  .contact li + li::before { content: "·"; margin: 0 .4em; }
   .news { list-style: none; padding: 0; }
   .news time { color: var(--color-text-muted); font-variant-numeric: tabular-nums; margin-right: .75rem; }
-  ul.pubs { list-style: none; padding: 0; }
-  section { margin-top: 2.5rem; }
-
-  @media (max-width: 34rem) {
-    .intro { flex-direction: column; }
-  }
+  section + section { margin-top: 2.5rem; }
 </style>

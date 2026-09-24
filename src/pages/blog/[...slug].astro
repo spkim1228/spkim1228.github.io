@@ -1,0 +1,25 @@
+---
+import Blog from '../../layouts/Blog.astro';
+
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blogs');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+// The layout already renders the post title as the page's <h1>
+if (headings.some(h => h.depth === 1)) {
+  throw new Error(`${post.filePath ?? post.id}: use "##" or deeper for headings; "#" would create a second <h1>.`);
+}
+---
+
+<Blog {...post.data}>
+  <Content />
+</Blog>

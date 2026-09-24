@@ -1,6 +1,6 @@
 ---
 name: "Paul Kim"
-avatar: "me.jpg"
+avatar: ""
 shortBio: ""
 institution: "Independent"
 ---

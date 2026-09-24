@@ -1,27 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import Navigation from '../components/Nav.astro';
-
-import "../styles/global.css";
-import { getCollection } from 'astro:content';
+import Header from '../components/Header.astro';
 ---
 
 <Base
-  title="Blog - SPK"
+  title="Misc - SPK"
 >
 
   <!-- Header -->
-  <header class="intro">
-    <div>
-      <h1>Misc</h1>
-      <p>
-      </p>
-    </div>
-
-    <div>
-      <Navigation />
-    </div>
-  </header>
-
+  <Header slot="header" heading="Misc" />
 
 </Base>

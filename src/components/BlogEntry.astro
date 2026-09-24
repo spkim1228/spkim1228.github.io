@@ -2,20 +2,26 @@
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  entry: CollectionEntry<'blog'>;
+  entry: CollectionEntry<'blogs'>;
 }
 
 const { entry } = Astro.props;
 const { title, subtitle, date, tags } = entry.data;
 
 const href = `/blog/${entry.id}/`;
-const display = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+const display = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 
-<article>
-  <h3><a href={href}>{title}</a></h3>
-  <p class="subtitle">{subtitle}</p>
-  <time datetime={date.toISOString().slice(0, 10)}>{display}</time>
+<li class="post">
+  <a class="title" href={href}>{title}</a>
+  <span class="subtitle">{subtitle}</span>
+  <time class="date" datetime={date.toISOString().slice(0, 10)}>{display}</time>
   {tags.length > 0 && <ul class="tags">{tags.map(t => <li>{t}</li>)}</ul>}
-</article>
+</li>
 
+<style>
+  .post { margin-bottom: 1rem; }
+  .title { display: block; font-weight: 600; }
+  .subtitle, .date { display: block; color: var(--color-text-muted); font-size: .9375rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: .75rem; list-style: none; padding: 0; color: var(--color-text-muted); font-size: .875rem; }
+</style>
