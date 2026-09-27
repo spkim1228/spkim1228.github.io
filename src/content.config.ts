@@ -40,6 +40,7 @@ const blogs = defineCollection({
     subtitle: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
+    source: z.enum(['substack', 'lesswrong', 'self']).default('self'),
   }),
 });
 
