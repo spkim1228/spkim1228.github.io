@@ -1,0 +1,43 @@
+---
+title: "Primum Non Nocere"
+subtitle: "Defining moral boundaries in the work that you do"
+date: 2026-10-01
+tags: [morality, tech]
+source: substack
+---
+
+Original post can be found on [substack](https://spkim.substack.com/p/primum-non-nocere)
+
+The Hippocratic Oath has long fascinated me due to its long-withstanding and, frankly, very starch way of looking at things. And while specific details of the oath and/or interpretations have changed since its conception (such as the phrase primum non nocere not actually being from the original text), the meat of the message remains intact: Do no harm.
+
+Three words that, in text, was very easy to write and type but achieving this in practice? Very different. This topic is fraught with uncertainty, rising from moral greys, differing systematic moral frameworks, and differing individual moral standards and situations. Thus, I feel like holding medicine and doctors to such a standard feels almost unfair. I also don’t know enough about medicine (a for-fun practice USMLE Step 1 exam unfortunately doesn’t contribute any real knowledge) to have a coherent line of thinking for this context.
+
+It feels very vibe-based for me, set to my personal views on morality. Ultimately, this medicine thought experiment will (hopefully) never apply to me! I’m not going to be on a plane 30,000 feet in the air performing emergency tracheotomies, despite the many medical dramas I’ve watched and how cool it would be. I’m not a reliable medical consult that people believe in — I leave that to my doctor friends.
+
+The phrase “Do no harm” continues to stick in my mind though; it can and should go beyond the field of medicine. Ideally, every profession should have the underlying mission of doing absolutely no or minimizing harm. It is an admittedly naive wish and belief for this to be reality. Despite this, I don’t think it should, at the very least, stop me from trying to implement it in my work and life.
+
+My interests and career (hopefully) is researching the interactions between the human and the digital; pressingly, it is the interactions between people and AI. Regarding AI Safety, it is a two-pronged fork filled with immediate questions of how to safeguard and mitigate harm to people now on one end and how to ensure model alignment with human values as these systems become more capable and independent on the other. And there are a lot of smart, capable people working in tech and AI on these issues.
+
+Overall though, observing the tech and AI bubble has been so, so fascinating that I could (and will likely) write an entirely separate entry on it. As the forerunners of the technological frontier, they are beholden to informed, first-hand knowledge and perspectives towards AI progress. Which is why I, as an outsider peering in, am disappointed with the many sentiments of late-stage goals, non-committance, and overall lack of personal stake and responsibility. There is too large of a disconnect between actions and the consequences of such actions.
+
+As an aside, there are many things I am not privy to as an outsider so there are factors I definitely unaware of when I say this; this disappointment is limited to my opinion based on my personal stances. Situations and circumstances are complex and reducing individuals to simplicity would be parochial and short-sighted. There are also different moral and cultural frameworks to consider, which is especially important when considering the prioritization of different spheres of influence. I dislike making any large call-to-actions for this reason, especially for people I don’t know.
+
+I am, however, someone I know. And importantly, I am someone whose actions I can actively control. Therefore, like previously mentioned, I should strive to ensure that me and my work looks to do no or as little harm as possible. This was a conversation I once had with someone of computer science professors at my undergrad. I had asked one of them (I unfortunately can’t remember exactly who) why they had chosen academia over industry. Their response (paraphrased)? I didn’t want to contribute to evil things. They followed up with how, of course, not all industry is evil (and academia is definitely not all good) but it started the conversation about moral boundaries and work. They and other professors briefly touched on the importance of having a defined personal code, something that should remain constant as one progresses through their professional life.
+
+Coming up with one was much harder than I initially expected; it needed to be clearly defined with little to wiggle room that I could mental gymnastics my way out of. I was partially inspired by a scene from “The Good Doctor” where a senior doctor resigns after almost forgetting a very minor detail, citing the need to stop before committing a severe mistake in the future (I’ve actually never seen the show, this scene just kept popping up my YouTube Shorts. There may be further context that I am missing outside of this scene). Everything counts, even the small things. And so, roughly speaking, I came up with the following as an outline:
+
+“In all work that I conduct, clearly define the purpose. Consider the positives and the negatives. If the negatives introduce ANY imminent harm to others and the world, stop immediately. If it includes any potential harm, formalize and disclose to appropriate parties and reconsider as a group. If deemed necessary, stop and emphasize the risks to others.
+
+In all work that I conduct, clearly define the process. Think of what consequences could arise from the process. If it includes ANY imminent harm to others and the world, stop immediately. If it includes any potential harm, formalize and disclose to appropriate parties and reconsider as a group. If deemed necessary, stop and emphasize the risks to others. If proceeding, prioritize less harmful processes that approximate the purpose.
+
+In all work that I conduct, clearly define who stands to gain from it and who stands to lose from it. If I am the sole or primary beneficiary of my work, stop immediately. If there are more to stand to lose than to gain, stop immediately. If there are more who gain but with non-zero of those who stand to lose, pause, reconsider, and consult with appropriate parties involved. If deemed necessary, stop and emphasize the risks to others.
+
+In all work that I conduct, look to do no harm. Harm is defined holistically, taking into consideration all parties’ definition of harm. Potential results should not be used as an excuse for harm in the short-term. Do not neglect the now for the later. Maintain the utmost respect for human life and the world at large. Primum non nocere.”
+
+Ultimately, this is high standard that I am trying to set with an admittedly very vague definition of what harm exactly looks like. This was written with controllable harm in mind, as this makes it easier to define what committing direct harm means at the cost of making unclear how to attribute unexpected consequences in the definition of harm. Personally, risk of potential consequences is under the definition of a controllable harm and neglect of such considerations is considered committing direct harm. Unfortunately, one can never be 100% certain of all possible consequences — in kind, safeguarding and guidelines should be implemented where possible.
+
+And overall, this statement exists to serve a dual-purpose. The first is a concrete guiderail that I must measure all my work against. The second is as a definitive mark and written statement that others —family, friends, peers, etc. — can hold against me. This is especially for those I trust dearly, as I will always be held accountable to them by this metric.
+
+There is room to grow on this code. I find it difficult to come up with anything permanent as there are ideas and perspectives that I have yet to encounter that could prove vital in a proper no-harm code. It’s also frankly impossible to come with something that could perfectly encapsulate harm in the future, especially with rapid acceleration of technological process and the ever-present risk of techno-fascism. So, this is the best I can do for now but it remains important to leave visible marks like this, to look back and hold oneself accountable.
+
+P.S. As a last note, I also want to stress the importance of doing no harm not just in one’s work but also in personal life — it’s jarring and hypocritical to maintain a “no-harm” outlook in work just to neglect one’s immediate surroundings. Love and cherish the people in your life. Look to improve the communities and the world you are a part of. Above all, be human.
