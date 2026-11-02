@@ -7,3 +7,13 @@
   type: thesis
   links:
     pdf: /kim2024.pdf
+
+- id: kim2026-swarm
+  title: "A Proposal for Examination of Conformity Mechanisms in Multi-Agent Systems"
+  authors:
+    - Paul Kim
+  venue: preprint
+  date: 2026-05-01
+  type: proposal
+  links:
+    pdf: /kim_swarm.pdf
